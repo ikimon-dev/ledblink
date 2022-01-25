@@ -2,12 +2,12 @@ cmake_minimum_required(VERSION 3.10)
 
 # set the project name and version
 
-set(PROJECT_NAME pico_display)
+set(PROJECT_NAME serialcomm)
 project(${PROJECT_NAME} VERSION 1.0)
 
 
 add_executable(${PROJECT_NAME}
-pico_display.c
+serialcomm.c
 )
 
 # pull in common dependencies
