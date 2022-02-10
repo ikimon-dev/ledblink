@@ -8,7 +8,7 @@
             "executable": "${command:cmake.launchTargetPath}",
             "request": "launch",
             "servertype": "external",
-            "preLaunchTask": "gdb_prepare",
+            "preLaunchTask": "Start-OpenOCD",
             // "console": "internalConsole",
             // "internalConsoleOptions": "openOnFirstSessionStart",
             // This may need to be arm-none-eabi-gdb depending on your system
