@@ -3,11 +3,22 @@
     // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
-        {
-            "label": "gdb_prepare",
+        { //https://qiita.com/RyodoTanaka/items/e9b15d579d17651650b7
             "type": "shell",
-            "isBackground": true,
-            "command": "openocd -f interface/picoprobe.cfg -f target/rp2040.cfg -s tcl  && sleep 3",
+            "label": "udevd-deamon",
+            "command": "sudo /lib/systemd/systemd-udevd --daemon",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "udevadm-control",
+            "command": "sudo udevadm control --reload-rules",
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
+            "label": "udevadm-triger",
+            "command": "sudo udevadm trigger",
             "problemMatcher": []
         },
         {
@@ -22,6 +33,13 @@
                 "target/rp2040.cfg",
                 "-s",
                 "tcl"
+            ],
+            // https://qiita.com/ShortArrow/items/0bacd3a4bcbcbac50e60
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "udevd-deamon",
+                "udevadm-control",
+                "udevadm-triger"
             ],
             "problemMatcher": {
                 "pattern": {
@@ -39,6 +57,6 @@
                 "reveal": "always"
             },
             "isBackground": true
-        }
+        },
     ]
 }
