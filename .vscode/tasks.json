@@ -9,6 +9,36 @@
             "isBackground": true,
             "command": "openocd -f interface/picoprobe.cfg -f target/rp2040.cfg -s tcl  && sleep 3",
             "problemMatcher": []
+        },
+        {
+            // https://gist.github.com/davidtibbetts/9ae8131d9f7e87c62ac064302405c453
+            "type": "shell",
+            "label": "Start-OpenOCD",
+            "command": "openocd",
+            "args": [
+                "-f",
+                "interface/picoprobe.cfg",
+                "-f",
+                "target/rp2040.cfg",
+                "-s",
+                "tcl"
+            ],
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "^(Info |Warn |Error):(.*)$",
+                    "severity": 1,
+                    "message": 2
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^Open On-Chip Debugger.*",
+                    "endsPattern": ".*watchpoints.*"
+                }
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "isBackground": true
         }
     ]
 }
