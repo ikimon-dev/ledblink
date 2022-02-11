@@ -54,9 +54,23 @@
                 }
             },
             "presentation": {
-                "reveal": "always"
+                "reveal": "always",
+                "clear": true
             },
             "isBackground": true
         },
+        { //https://qiita.com/amay077/items/3e4c3d6102c70bf46463
+            "label": "TerminateDebug",
+            "type": "process",
+            "command": "echo ${input:terminate}"
+        }
+    ],
+    "inputs": [
+        { //https://komari.co.jp/blog/1780/
+            "id": "terminate",
+            "type": "command",
+            "command": "workbench.action.tasks.terminate",
+            "args": "Start-OpenOCD"
+        }
     ]
 }

@@ -9,6 +9,7 @@
             "request": "launch",
             "servertype": "external",
             "preLaunchTask": "Start-OpenOCD",
+            "postDebugTask": "TerminateDebug",
             // "console": "internalConsole",
             // "internalConsoleOptions": "openOnFirstSessionStart",
             // This may need to be arm-none-eabi-gdb depending on your system
@@ -42,6 +43,7 @@
                 }
             ],
             "preLaunchTask": "Start-OpenOCD",
+            "postDebugTask": "TerminateDebug",
             "miDebuggerPath": "/usr/bin/gdb-multiarch",
             "miDebuggerServerAddress": ":3333"
         }
