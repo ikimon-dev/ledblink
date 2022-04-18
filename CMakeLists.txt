@@ -26,11 +26,16 @@ endif()
 # Initialize the SDK
 pico_sdk_init()
 
-add_compile_options(-Wall
+add_compile_options(
+        -O0
+        -g
+        -Wall
         -Wno-format          # int != int32_t as far as the compiler is concerned because gcc has int32_t as long int
         -Wno-unused-function # we have some for the docs that aren't called
         -Wno-maybe-uninitialized
         )
 
+add_subdirectory(src/buttonInput)
 add_subdirectory(src/ledblink)
 add_subdirectory(src/serialComm)
+add_subdirectory(src/tftDisplay)
