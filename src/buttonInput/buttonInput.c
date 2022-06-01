@@ -24,7 +24,7 @@ int main()
 
         if (gpio_get(BUTTON_GPIO))
         {
-            gpio_put(LED_PIN, 1);
+              gpio_put(LED_PIN, 1);
         }
         else
         {

@@ -5,6 +5,8 @@ public:
     z144_TFT(/* args */);
     ~z144_TFT();
 
+    void Initialize();
+
 private:
     /* data */
 };

@@ -5,21 +5,21 @@
 #include <cstdint>
 
 #include "pico/stdlib.h"
-#include "hardware/pio.h"
+// #include "hardware/pio.h"
 #include "hardware/gpio.h"
-#include "hardware/interp.h"
+// #include "hardware/interp.h"
 
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 128
 #define IMAGE_SIZE 256
 #define LOG_IMAGE_SIZE 8
 
-#define PIN_DIN 0
-#define PIN_CLK 1
-#define PIN_CS 2
-#define PIN_DC 3
-#define PIN_RESET 4
-#define PIN_BL 5
+#define PIN_DIN 3
+#define PIN_CLK 2
+#define PIN_CS 5
+#define PIN_DC 7
+#define PIN_RESET 6
+// #define PIN_BL 5
 
 #define ST7735X_CMD_SWREST 0x01  // ソフトウェアリセット
 #define ST7735X_CMD_SLPIN 0x10   // スリープする
@@ -78,11 +78,11 @@ void z144_TFT::Initialize()
     gpio_init(PIN_CS);
     gpio_init(PIN_DC);
     gpio_init(PIN_RESET);
-    gpio_init(PIN_BL);
+    // gpio_init(PIN_BL);
     gpio_set_dir(PIN_CS, GPIO_OUT);
     gpio_set_dir(PIN_DC, GPIO_OUT);
     gpio_set_dir(PIN_RESET, GPIO_OUT);
-    gpio_set_dir(PIN_BL, GPIO_OUT);
+    // gpio_set_dir(PIN_BL, GPIO_OUT);
 }
 
 void z144_TFT::DisplayClear() {}

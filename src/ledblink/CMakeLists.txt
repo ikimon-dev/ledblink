@@ -7,7 +7,7 @@ project(${PROJECT_NAME} VERSION 1.0)
 
 
 add_executable(${PROJECT_NAME}
-pico_display.c
+main.c
 )
 
 # pull in common dependencies
