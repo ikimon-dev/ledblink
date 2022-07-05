@@ -1,4 +1,9 @@
-
+{
+    "files.associations": {
+        "*.pio": "pio",
+        "dev_config.h": "c"
+    }
+}
 // {
 //     "cortex-debug.armToolchainPath.linux": "/usr/bin/gdb-multiarch"
 // }

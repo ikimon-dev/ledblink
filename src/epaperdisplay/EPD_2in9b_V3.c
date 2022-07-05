@@ -77,7 +77,7 @@ parameter:
 ******************************************************************************/
 void EPD_2IN9B_V3_ReadBusy(void)
 {
-    Debug("e-Paper busy\r\n");
+    // Debug("e-Paper busy\r\n");
     UBYTE busy;
 	do
 	{
@@ -86,7 +86,7 @@ void EPD_2IN9B_V3_ReadBusy(void)
 		busy =!(busy & 0x01);        
 	}
 	while(busy); 
-    Debug("e-Paper busy release\r\n");
+    // Debug("e-Paper busy release\r\n");
     DEV_Delay_ms(200);
 }
 

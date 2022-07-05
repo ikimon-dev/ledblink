@@ -38,8 +38,4 @@ add_compile_options(
         -Wno-maybe-uninitialized
 )
 
-add_subdirectory(src/buttonInput)
-add_subdirectory(src/ledblink)
-add_subdirectory(src/serialComm)
-add_subdirectory(src/tftDisplay)
-add_subdirectory(src/epaperDisplay)
+add_subdirectory(src/epaperdisplay)
